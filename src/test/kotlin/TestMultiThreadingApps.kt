@@ -39,7 +39,7 @@ class TestMultiThreadingApps {
         var thirdProduct = -1
         var fourthProduct = -1
         var fifthProduct = -1
-        val responseFromServer = Client().startClient(3345, 35001)
+        val responseFromServer = Client().startClient(3345, "1 1 1 1 1")
         if (responseFromServer != "Connection error") {
             val partsOfMessageFromServer = responseFromServer.split("|")
             firstProduct = partsOfMessageFromServer[0].toInt()
@@ -75,8 +75,8 @@ class TestMultiThreadingApps {
      */
     @Test
     fun testOnlyTwoClients() {
-        val responseFromServerForFirstClient = Client().startClient(3345, 35001)
-        val responseFromServerForSecondClient = Client().startClient(3345, 35002)
+        val responseFromServerForFirstClient = Client().startClient(3345, "1 1 1 1 1")
+        val responseFromServerForSecondClient = Client().startClient(3345, "1 1 1 1 1")
         var resultFirst = false
         var resultSecond = false
         if (responseFromServerForFirstClient != "Connection error") {

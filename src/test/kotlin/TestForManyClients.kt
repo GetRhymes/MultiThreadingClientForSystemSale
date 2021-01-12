@@ -46,7 +46,7 @@ class TestForManyClients {
 
         override fun run() {
             for (i in 0 until 1000) {
-                val responseFromServer = Client().startClient(3345, clientPort + i)
+                val responseFromServer = Client().startClient(3345, "1 1 1 1 1")
                 if (responseFromServer != "Connection error") {
                     val partsOfMessageFromServer = responseFromServer.split("|")
                     products.changeValue(
